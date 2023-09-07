@@ -1,0 +1,14 @@
+---
+import HomepageTab from "@layouts/function-components/HomepageTab";
+import { AiFillCheckCircle } from "react-icons/ai/index.js";
+import { Image } from "@astrojs/image/components";
+const { service } = Astro.props;
+const { homepage_tab, our_service } = service;
+---
+
+<section class="section services">
+  <div class="container">
+    <HomepageTab client:load homepage_tab={homepage_tab} />
+
+  </div>
+</section>

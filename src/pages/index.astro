@@ -1,0 +1,45 @@
+---
+import FeatureBanner from "@components/features/FeatureBanner.astro";
+import Base from "@layouts/Base.astro";
+import Banner from "@layouts/components/Banner.astro";
+import CounterComponent from "@components/about/CounterComponent.astro";
+import KeyFeatures from "@layouts/components/KeyFeatures.astro";
+import Testimonial from "@layouts/components/Testimonial.astro";
+import Service from "@layouts/components/Service.astro";
+import Cta from "@layouts/partials/Cta.astro";
+import { getEntryBySlug } from "astro:content";
+
+const homepage = await getEntryBySlug("homepage", "index");
+const { banner, key_features, service, testimonial, counter, CTA } = homepage.data;
+const features = await getEntryBySlug("features", "index");
+
+---
+
+<Base>
+  <!-- banner -->
+  <Banner banner={banner} />
+  <!-- Feathures Banner -->
+  <FeatureBanner features={features.data} />
+  <!-- key features
+  <KeyFeatures key_features={key_features} /> -->
+  <!-- counter component -->
+  <section class="page-hero py-16">
+    <div class="container">
+      <div class="flex flex-col gap-4">
+        <h3>Achievements at a Glance</h3>
+        <p class="w-8/12">At Iconize Inc., we believe in measurable success. Our commitment to excellence is reflected in the numbers - real, tangible results that showcase our dedication to helping businesses thrive in the digital world.</p>
+      </div>
+
+      <CounterComponent counter={counter} />
+    </div>
+  </section>
+
+
+  <Service service={service} />
+  <!-- service -->
+  <!-- <Service service={service} /> -->
+  <!-- testimonial -->
+  <Testimonial testimonial={testimonial} />
+  <!-- call to action -->
+  <Cta ={CTA} />
+</Base>
