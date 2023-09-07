@@ -4,8 +4,8 @@
     "base_url": "https://pinwheel-astro.vercel.app",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/IconizeLogo.svg",
-    "logo": "/images/IconizeLogo.svg",
+    "favicon": "/images/IconizeLogo.png",
+    "logo": "/images/IconizeLogo.png",
     "logo_width": "171.6",
     "logo_height": "25.2",
     "logo_text": "Iconize"
